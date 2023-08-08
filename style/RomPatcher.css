@@ -10,8 +10,12 @@ body{
 	font:15px 'Open Sans',sans-serif;
 	cursor:default;
 	line-height:1.8;
-	background-color:#31343a;
-	color:#3c3c3c;
+	background-color:#313139;
+	background-image: url('./background.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom right;
+	color:#313139;
 	-moz-user-select:none;
 	-webkit-user-select: none;
 	-ms-user-select:none;
@@ -64,7 +68,11 @@ footer{padding: 50px 0 20px}
 }
 
 
-
+.logo {
+	max-width: 320px;
+	width: 100%;
+	height: auto;
+}
 
 
 
@@ -196,7 +204,7 @@ input[type=file].disabled,select.disabled{background-color:transparent}
 
 
 /* buttons */
-button{
+button,.button{
 	font-family:inherit;
 	font-size:100%;
 	min-width:120px;
@@ -212,15 +220,15 @@ button{
 
 	box-sizing:border-box
 }
-button.enabled:hover{
+button.enabled:hover,.button.enabled:hover{
 	cursor:pointer;
 	background-color:#3aacb5;
 }
-button.enabled:active{
+button.enabled:active,.button.enabled:active{
 	background-color:#297b81;
 	transform:translateY(1px)
 }
-button:disabled{opacity:.35 !important;cursor:not-allowed}
+button:disabled,.button:disabled{opacity:.35 !important;cursor:not-allowed}
 
 button.no-text.with-icon:before{margin-right:0px}
 
@@ -301,13 +309,25 @@ button.no-text.with-icon:before{margin-right:0px}
 #wrapper{
 	box-sizing:border-box;
 	max-width:95%;
-	width:600px;
-	margin:0 auto
+	margin: 0 auto;
+	margin-left: 30px;
 }
 
+.inner-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+.flex {
+	display: flex;
+}
+a.button {
+	display: block;
+}
 
-
-
+.documentation-wrapper p {
+	margin-right: 24px;
+}
 
 
 /* dialogs */
@@ -411,4 +431,11 @@ body.light footer a:hover{color:#484543; border-color:#ffac41}
 	#rom-info{font-size:11px}
 	header img{max-height:96px}
 	#settings-dialog, #zip-dialog{min-width: auto;}
+}
+
+@media only screen and (max-width: 1024px){
+	.inner-wrapper{
+		flex-direction: column;
+	}
+	#wrapper{margin-left: auto;}
 }

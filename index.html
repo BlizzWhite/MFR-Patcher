@@ -7,7 +7,7 @@
 	<meta name="keywords" content="ips,ups,aps,bps,rup,ninja,ppf,xdelta,patcher,online,html5,web,rom,patch,hack,translation"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 	<link rel="manifest" href="./manifest.json"/>
-	<link rel="shortcut icon" href="./style/app_icon_16.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="./style/favicon.ico" type="image/png" sizes="16x16"/>
 	<link rel="shortcut icon" href="./style/app_icon_192.png" type="image/png" sizes="192x192"/>
 	<!-- iOS icons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="./style/app_icon_114.png" />
@@ -56,43 +56,80 @@
 		// uncomment this to build your own custom exclusive patcher for your hacks/translations
 		// user will only need to provide the ROM file, as patches will be fetched from your server!
 		// a crc (or various crcs) can be provided for source files, allowing old formats like IPS to have validation!
-		/*var CUSTOM_PATCHER=[
-			{ //example: uncompressed file
-				file:'./_example/SML2DXv181.ips',
-				name:'Super Mario Land 2 DX v1.8.1 (USA/Europe)',
-				crc:0xd5ec24e4
-			},{ //example: uncompressed file
-				file:'./_example/SML2DXv181_jap.ips',
-				name:'Super Mario Land 2 DX v1.8.1 (Japan)',
-				crc:0xa715daf5
-			},{ //example: compressed file
-				file:'./_example/SML2DXv181.zip',
-				name:'Super Mario Land 2 DX v1.8.1 (World)',
-				crc:[0xd5ec24e4,0xa715daf5]
-			},{ //example: compressed file containing several patches, separate patches provided (recommended)
-				file:'./_example/SML2DXv181.zip',
-				patches:[{
-					file:'SML2DXv181.ips',
-					name:'Super Mario Land 2 DX v1.8.1 (USA/Europe)',
-					crc:0xd5ec24e4
-				},{
-					file:'SML2DXv181_jap.ips',
-					name:'Super Mario Land 2 DX v1.8.1 (Japan)',
-					crc:0xa715daf5
-				}]
-			}
-		];*/
+		var CUSTOM_PATCHER = [
+            {
+                file: './patch/MFR1.4_TestBuild3.ups',
+                name: 'Mega Moemon Fire Red v1.4',
+            }
+        ];
 	--></script>
 </head>
-<body><div id="column">
-
-
-<!-- HEADER -->
-<header><img src="./style/logo.png" /><h1>Rom Patcher JS</h1></header>
+  <body>
+    <div id="column">
+      <!-- HEADER -->
+      <header>
+		<img class="logo" src="./style/logo.png" />
+	</header>
 
 <!-- APP -->
 <div id="wrapper">
 	<div id="switch-container"><span id="switch-create-button" class="button-outer"><span data-localize="creator_mode">Creator mode</span> <span id="switch-create" class="switch disabled"></span></span></div>
+	<div class="inner-wrapper">
+
+	<div class="tab documentation-wrapper">
+		<h2>Documentation:</h2>
+
+		<div class="row m-b flex">
+			<p>Changelog:</p>
+			<a
+				href="https://drive.google.com/u/0/uc?id=1_GhZiUM5Pfn4B8QYB-l96wsQSNZdqg7J&export=download"
+				class="button"
+			>
+				Download
+			</a>
+		</div>
+
+		<div class="row m-b flex">
+			<p>README:</p>
+			<a
+				href="https://drive.google.com/u/0/uc?id=1EgcE4CGpuld4StctCqT0U36_PCB0f2si&export=download"
+				class="button"
+			>
+				Download
+			</a>
+		</div>
+
+		<div class="row m-b flex">
+			<p>Pokemon Encounters 1.4:</p>
+			<a
+				href="https://drive.google.com/u/0/uc?id=17hnKF2P18IwcsYBcOW5aSKB2qJV6ATaE&export=download"
+				class="button"
+			>
+				Download
+			</a>
+		</div>
+
+		<div class="row m-b flex">
+			<p>Eeveelutions:</p>
+			<a
+				href="https://drive.google.com/u/0/uc?id=1BjD26B_mvWbPXqcpOXVDzFb5zvnAdO_H&export=download"
+				class="button"
+			>
+				Download
+			</a>
+		</div>
+
+		<div class="row m-b flex">
+			<p>Credits:</p>
+			<a
+				href="https://drive.google.com/u/0/uc?id=1TjL8BJsP9xNCYAyQQmFTizLJoZU3dvjE&export=download"
+				class="button"
+			>
+				Download
+			</a>
+		</div>
+
+	</div>
 
 	<div id="tab0" class="tab">
 		<div class="row m-b">
@@ -132,8 +169,6 @@
 		</div>
 	</div>
 
-
-
 	<div id="tab1" class="tab">
 		<div class="row m-b">
 			<div class="leftcol text-right"><label for="input-file-rom1" data-localize="original_rom" >Original ROM:</label></div>
@@ -168,11 +203,9 @@
 			<button id="button-create" class="disabled" disabled data-localize="create_patch">Create patch</button>
 		</div>
 	</div>
+
+	</div>
 </div>
-
-
-
-
 
 <!-- FOOTER -->
 <footer>
@@ -187,7 +220,6 @@
 </footer>
 
 </div>
-
 
 <!-- SETTINGS DIALOG -->
 <div id="dialog-backdrop">
